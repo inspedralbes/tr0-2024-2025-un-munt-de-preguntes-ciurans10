@@ -209,7 +209,7 @@ function mostrarAlerta(indiceRespuesta, indexPregunta) {
     if (indiceRespuesta === respostaCorrecta) {
         console.log(`Pregunta ${indexPregunta + 1}, Resposta ${indiceResposta + 1}`);
     } else {
-        console.log(`Fallaste CALVOOO Pregunta ${indexPregunta + 1}, Resposta ${indiceResposta + 1}`);
+        console.log(`Pregunta ${indexPregunta + 1}, Resposta ${indiceResposta + 1}`);
     }
 }
 
