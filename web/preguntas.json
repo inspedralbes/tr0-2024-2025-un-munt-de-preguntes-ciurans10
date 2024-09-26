@@ -1,0 +1,115 @@
+{
+    "preguntes":[
+        {
+           "id":1,
+           "pregunta":"Quin senyal indica que no pots girar a l'esquerra?",
+           "respostes":[
+              "Senyal A",
+              "Senyal B",
+              "Senyal C"
+           ],
+           "resposta_correcta":1,
+           "imatge":"https://media.istockphoto.com/id/1304861449/es/foto/se%C3%B1ale-de-tr%C3%A1fico-sin-giro-a-la-izquierda.jpg?s=612x612&w=0&k=20&c=ntl0o1AWSzyMvYyT0hMgyJWngtrixCUQYqie5xX0JAk="
+        },
+        {
+           "id":2,
+           "pregunta":"Quina és la velocitat màxima permesa en una zona residencial?",
+           "respostes":[
+              "30 km/h",
+              "50 km/h",
+              "70 km/h"
+           ],
+           "resposta_correcta":0,
+           "imatge":"https://upload.wikimedia.org/wikipedia/commons/3/3a/Limite_velocidad_90_autovia.png"
+        },
+        {
+           "id":3,
+           "pregunta":"Què significa el senyal de color blau amb una bicicleta?",
+           "respostes":[
+              "Zona d'aparcament de bicicletes",
+              "Carril bici obligatori",
+              "Prohibit el pas de bicicletes"
+           ],
+           "resposta_correcta":1,
+           "imatge":"https://www.barcelona.cat/mobilitat/sites/default/files/styles/wide/public/2023-08/Senyal_carrilbici.jpg?itok=DW3qjC7t"
+        },
+    
+        {
+           "id":4,
+           "pregunta":"Quan es pot avançar per la dreta en una autopista?",
+           "respostes":[
+              "Quan el vehicle davant teu està parat",
+              "Quan el vehicle davant teu gira a l'esquerra",
+              "Mai es pot avançar per la dreta"
+           ],
+           "resposta_correcta":2,
+           "imatge":"https://www.shutterstock.com/image-photo/ostrava-czech-republic-march-23-600nw-2454903557.jpg"
+        },
+        {
+           "id":5,
+           "pregunta":"Què has de fer quan veus un senyal de STOP?",
+           "respostes":[
+              "Reduir la velocitat i continuar si no hi ha vehicles",
+              "Aturar-te completament i cedir el pas",
+              "Tocar el clàxon per avisar altres vehicles"
+           ],
+           "resposta_correcta":1,
+           "imatge":"https://t1.uc.ltmcdn.com/es/posts/5/9/6/como_actuar_ante_una_senal_de_stop_18695_600.jpg"
+        },
+        {
+           "id":6,
+           "pregunta":"Quin document és necessari per conduir un vehicle?",
+           "respostes":[
+              "El passaport",
+              "El carnet de conduir",
+              "El certificat de naixement"
+           ],
+           "resposta_correcta":1,
+           "imatge":"https://comprar-coches-de-ocasion.com/wp-content/uploads/2020/04/documentacion-coche-830x460.jpg"
+        },
+        {
+           "id":7,
+           "pregunta":"Quina és la distància mínima que s'ha de mantenir amb el vehicle de davant?",
+           "respostes":[
+              "50 metres",
+              "La distància de seguretat depèn de la velocitat",
+              "100 metres"
+           ],
+           "resposta_correcta":1,
+           "imatge":"https://www.autopista.es/uploads/s1/96/19/31/5/los-casos-en-los-que-si-se-puede-adelantar-con-la-senal-de-prohibido-imagen-dgt.jpeg"
+        },
+        {
+           "id":8,
+           "pregunta":"Quina llum s'ha d'utilitzar quan es condueix en condicions de boira intensa?",
+           "respostes":[
+              "Llums de posició",
+              "Llums antiboira",
+              "Llums de carretera"
+           ],
+           "resposta_correcta":1,
+           "imatge":"https://img.freepik.com/vector-gratis/composicion-moderna-luces-coche_1284-21373.jpg"
+        },
+        {
+           "id":9,
+           "pregunta":"Què indica un semàfor amb llum verda?",
+           "respostes":[
+              "Aturar-se",
+              "Passar amb precaució",
+              "El pas està permès"
+           ],
+           "resposta_correcta":2,
+           "imatge":"https://s03.s3c.es/imag/_v0/1200x655/a/1/3/Semaforo.jpg"
+        },
+        {
+           "id":10,
+           "pregunta":"Què significa una línia contínua al mig de la carretera?",
+           "respostes":[
+              "Es pot avançar si no hi ha vehicles de cara",
+              "Prohibit avançar",
+              "Només es pot avançar de nit"
+           ],
+           "resposta_correcta":1,
+           "imatge":"https://as2.ftcdn.net/v2/jpg/00/98/94/93/1000_F_98949316_Z1IMPcxnyeFY2VGdHB6VsMP3HcTfLMJk.jpg"
+        }
+     ]
+    }
