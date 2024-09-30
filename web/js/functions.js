@@ -50,20 +50,19 @@ function pintaPreguntes(arrayPreguntes){
 function enviarRespostes() {
     const selectedAnswersJSON = JSON.stringify(estatPartida);
     console.log('Botón enviar presionado');
-    fetch('php/finalitza.php', {
+    fetch('http://localhost/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/php/finalitza.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: selectedAnswersJSON
     })
-    .then(response => response.json())
     .then(data => {
-        // Redirigir a la página de resultados
-        window.location.href = `resultats.php?puntuacio=${data.puntuacio}&total=${arrayPreguntes.length}`;
+        console.log('Datos recibidos del servidor:', data);
+        window.location.href = `http://localhost/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/php/finalitza.php?puntuacio=${data.puntuacio}&total=${estatPartida.preguntes.length}`;
     })
     .catch(error => console.error('Error:', error));
-}
+}    
 
 function apretarBoto(indexPregunta, indexResposta){
    console.log("Has apretat la pregunta" + indexPregunta + " y la resposta" + indexResposta);

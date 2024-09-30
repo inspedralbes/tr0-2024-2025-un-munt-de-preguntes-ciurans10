@@ -2,7 +2,7 @@
 session_start();
 
 // Llegir el fitxer JSON de preguntes
-$jsonData = file_get_contents('preguntas.json');
+$jsonData = file_get_contents('http://localhost/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/php/getPreguntas.php');
 $questionsData = json_decode($jsonData, true); 
 $questions = $questionsData['preguntes'];
 
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Si s'han respost totes les preguntes, redirigir a la pàgina de resultats
     if ($_SESSION['current_question'] >= count($questions)) {
-        header("Location: resultats.php");
+        header("Location: finalitza.php");
         exit();
     }
 } else {
