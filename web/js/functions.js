@@ -13,14 +13,14 @@ const estatPartida= {
    {id:9, feta:true , resposta:1}
    ]   
    }
-   let arrayPreguntesGlobal = []; // Nueva variable global para almacenar las preguntas
+   let arrayPreguntesGlobal = []; 
 
    document.addEventListener("DOMContentLoaded", function () {
       fetch('preguntas.json')
           .then(response => response.json())
           .then(data => {
               console.log('Preguntas cargadas:', data);
-              arrayPreguntesGlobal = data.preguntes; // Almacena las preguntas en la variable global
+              arrayPreguntesGlobal = data.preguntes; 
               pintaPreguntes(arrayPreguntesGlobal);
           })
           .catch(error => console.error('Error al cargar las preguntas:', error));

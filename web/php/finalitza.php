@@ -4,7 +4,6 @@ header('Content-Type: application/json');
 
 $json = file_get_contents('php://input');
 
-// Verificar si se recibió el cuerpo de la solicitud
 if (empty($json)) {
     $response = [
         'error' => 'No se ha recibido ningún dato en el cuerpo de la solicitud.',
@@ -13,20 +12,8 @@ if (empty($json)) {
     exit;
 }
 
-// Intentar decodificar el JSON
 $data = json_decode($json, true);
 
-// Verificar si hubo un error en la decodificación JSON
-if (json_last_error() !== JSON_ERROR_NONE) {
-    $response = [
-        'error' => 'Error de decodificación JSON: ' . json_last_error_msg(),
-        'json_recibido' => $json
-    ];
-    echo json_encode($response);
-    exit;
-}
-
-// Comprobar si la estructura de datos es la esperada
 if (isset($data['preguntes']) && is_array($data['preguntes'])) {
     $_SESSION['respostes'] = $data['preguntes'];
 
@@ -77,6 +64,5 @@ if (isset($data['preguntes']) && is_array($data['preguntes'])) {
     ];
 }
 
-// Devolver la respuesta en formato JSON
 echo json_encode($response);
 ?>
