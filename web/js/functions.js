@@ -16,15 +16,19 @@ const estatPartida= {
    let arrayPreguntesGlobal = []; 
 
    document.addEventListener("DOMContentLoaded", function () {
-      fetch('preguntas.json')
-          .then(response => response.json())
-          .then(data => {
-              console.log('Preguntas cargadas:', data);
-              arrayPreguntesGlobal = data.preguntes; 
-              pintaPreguntes(arrayPreguntesGlobal);
-          })
-          .catch(error => console.error('Error al cargar las preguntas:', error));
-   });
+    fetch('http://localhost/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/getPreguntas.php')
+    .then(response => {
+    
+        return response.json(); 
+    })
+    .then(data => {
+        console.log('Preguntas cargadas:', data);
+        arrayPreguntesGlobal = data.preguntes;  
+        pintaPreguntes(arrayPreguntesGlobal);
+    })
+    .catch(error => console.error('Error al cargar las preguntas:', error));
+});
+
    
    function pintaPreguntes(arrayPreguntes){
          let htmlString = '';
@@ -55,7 +59,7 @@ const estatPartida= {
        const selectedAnswersJSON = JSON.stringify(estatPartida);
        console.log('Botón enviar presionado');
        
-       fetch('http://localhost/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/php/finalitza.php', {
+       fetch('http://localhost/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/finalitza.php', {
            method: 'POST',
            headers: {
                'Content-Type': 'application/json'
@@ -67,7 +71,7 @@ const estatPartida= {
            console.log('Respuesta del servidor:', data);
            
            if (data.puntuacio !== undefined) {
-               window.location.href = `http://localhost/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/php/finalitza.php`;
+               window.location.href = `http://localhost/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/finalitza.php`;
            } else {
                console.error('Error en la respuesta del servidor: ', data);
            }

@@ -15,15 +15,14 @@ if (empty($json)) {
 $data = json_decode($json, true);
 
 if (isset($data['preguntes']) && is_array($data['preguntes'])) {
-    $_SESSION['respostes'] = $data['preguntes'];
-
+    
     $respostesCorrectes = [1, 0, 1, 2, 1, 1, 1, 1, 2, 1]; 
-
     $puntuacio = 0;
-    $respostesCorrectesCount = 0;
-    $respostesDetall = [];  
+    $respostesDetall = []; 
 
     $totalPreguntes = count($data['preguntes']);
+    
+    // Comprobar que el total de preguntas no exceda las respuestas correctas
     if ($totalPreguntes > count($respostesCorrectes)) {
         $response = [
             'error' => 'La cantidad de preguntas recibidas supera la cantidad de respuestas correctas definidas.'
@@ -33,29 +32,33 @@ if (isset($data['preguntes']) && is_array($data['preguntes'])) {
     }
 
     foreach ($data['preguntes'] as $index => $pregunta) {
+        // Obtener la respuesta correcta y la seleccionada
         $correcta = isset($respostesCorrectes[$index]) ? $respostesCorrectes[$index] : null;
         $seleccionada = isset($pregunta['resposta']) ? $pregunta['resposta'] : null;
 
+        // Comprobar si la respuesta seleccionada es correcta
         if ($seleccionada !== null && $seleccionada == $correcta) {
-            $puntuacio += 1;
-            $respostesCorrectesCount += 1;
+            $puntuacio += 1; // Aumentar la puntuación
         }
 
+        // Añadir detalles de la respuesta al arreglo
         $respostesDetall[] = [
             'pregunta_id' => $pregunta['id'],
-            'correcta' => $correcta,
+            'pregunta' => $pregunta['pregunta'],
+            'respuesta_correcta' => $correcta,
             'seleccionada' => $seleccionada,
-            'acertada' => $seleccionada == $correcta
+            'acertada' => ($seleccionada === $correcta)
         ];
     }
 
+    // Almacenar la puntuación en la sesión (opcional)
     $_SESSION['score'] = $puntuacio;
 
+    // Preparar la respuesta final
     $response = [
-        'puntuacio' => $_SESSION['score'],
-        'respostes_correctes' => $respostesCorrectesCount,
+        'puntuacio' => $puntuacio,
         'total_preguntes' => $totalPreguntes,
-        'detall_respostes' => $respostesDetall  
+        'respostes_detallades' => $respostesDetall // Devolvemos los detalles de las respuestas
     ];
 } else {
     $response = [
@@ -64,5 +67,5 @@ if (isset($data['preguntes']) && is_array($data['preguntes'])) {
     ];
 }
 
-echo json_encode($response);
+echo json_encode($response); // Enviar la respuesta JSON al cliente
 ?>
