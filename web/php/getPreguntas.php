@@ -12,8 +12,6 @@ $preguntas = [];
             $row['resposta2'],
             $row['resposta3']
         ];
-        shuffle($respuestas); 
-
         $preguntas[] = [
             'id' => $row['id'],
             'pregunta' => $row['pregunta'],
@@ -22,6 +20,7 @@ $preguntas = [];
             'imatge' => $row['imatge']
         ];
     }
+    shuffle($preguntas);
 
 echo json_encode($preguntas);
 ?>
