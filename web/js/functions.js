@@ -51,7 +51,6 @@ function apretarBoto(indexPregunta, respuestaSeleccionada) {
     console.log(JSON.stringify(jsonPreguntasSeleccionades));
 }
 
-
 function enviarRespostes() {
     fetch ("/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/php/finalitza.php",{
         method: "POST",
