@@ -1,0 +1,3 @@
+SELECT * FROM preguntas
+ORDER BY RAND()
+LIMIT 10;
