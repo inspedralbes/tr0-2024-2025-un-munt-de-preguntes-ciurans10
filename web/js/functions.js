@@ -6,7 +6,7 @@ const estatPartida = {
     respostesSeleccionades: [] 
 };
 
-fetch('http://localhost/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/php/getPreguntas.php')
+fetch('../php/getPreguntas.php')
     .then(response => response.json())
     .then(data => {
         estatPartida.preguntes = data;
@@ -52,7 +52,7 @@ function apretarBoto(indexPregunta, respuestaSeleccionada) {
 }
 
 function enviarRespostes() {
-    fetch ("/tr0-2024-2025-un-munt-de-preguntes-ciurans10/web/php/finalitza.php",{
+    fetch ("../php/finalitza.php",{
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=utf-8"
