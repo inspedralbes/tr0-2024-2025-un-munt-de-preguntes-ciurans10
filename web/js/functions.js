@@ -1,3 +1,4 @@
+
 let jsonPreguntasSeleccionades = [];
 
 const estatPartida = {
